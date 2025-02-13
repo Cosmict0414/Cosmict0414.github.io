@@ -201,6 +201,13 @@
 <p>获得端口号对应的PID</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 73195</span><br></pre></td></tr></table></figure>
 <p>杀掉端口进程，再次尝试就正常了</p>
+<h4 id="连接github出现问题"><a href="#连接github出现问题" class="headerlink" title="连接github出现问题"></a>连接github出现问题</h4><p>报错信息（两种）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error:02fff036:system library:func(4095):connection reset by peer</span><br><span class="line">-----</span><br><span class="line">LibreSSL SSL_connect: SSL_ERROR_SYSCALL <span class="keyword">in</span> connection to github.com:443 </span><br></pre></td></tr></table></figure>
+<p>后面的报错由于运行一下代码，更改了代理导致出错</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:1087</span><br></pre></td></tr></table></figure>
+<p>之后通过这篇博客：<a href="https://blog.csdn.net/m0_56942491/article/details/136011291"> 更换代理 </a><br>运行一下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.https://github.com.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+<p>之后链接成功，成功上传，总结为：之前的网络代理有问题，使用https就好了</p>
 
                 <hr>
                 
@@ -229,7 +236,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-text">常见问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%EF%BC%9A"><span class="toc-text">端口占用：</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-text">常见问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%EF%BC%9A"><span class="toc-text">端口占用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5github%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="toc-text">连接github出现问题</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
